@@ -5,4 +5,4 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Breeze1203/SpringCloud.git
+          uri: file:Users/pt/Documents/spring-cloud
