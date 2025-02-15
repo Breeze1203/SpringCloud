@@ -1,0 +1,7 @@
+app:
+  name: "spring-cloud-config-client.local"
+  website: "http://piinalpin.com"
+config:
+  profile: "local"
+service:
+  port: 8081

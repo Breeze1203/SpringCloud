@@ -1,0 +1,7 @@
+app:
+  name: "spring-cloud-config-client.dev"
+  website: "http://piinalpin.com"
+config:
+  profile: "development"
+server:
+  port: 7001
