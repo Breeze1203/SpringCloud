@@ -10,16 +10,16 @@ import org.springframework.context.annotation.Profile;
  * @Description
  * @Date 2025/2/10 11:36
  **/
-@Configuration
-@Profile("custom")
+//@Configuration
+//@Profile("custom")
 public class AppConfig {
-    @Bean
-    public FileRepository fileRepository() {
-        return new FileRepository();
-    }
+//    @Bean
+//    public FileRepository fileRepository() {
+//        return new FileRepository();
+//    }
 
-    @Bean
-    public GitRepository gitRepository() {
-        return new GitRepository();
-    }
+//    @Bean
+//    public GitRepository gitRepository() {
+//        return new GitRepository();
+//    }
 }
