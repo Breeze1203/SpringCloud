@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://${user.home}/Documents/spring-cloud/
+          default-label: main
+server:
+  port: 8087
