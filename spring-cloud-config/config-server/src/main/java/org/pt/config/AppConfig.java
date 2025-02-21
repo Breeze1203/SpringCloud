@@ -6,19 +6,19 @@ import org.springframework.context.annotation.Profile;
 
 /**
  * @ClassName AppConfig
- * @Author pt
+ * @Author pt 自定义存储库
  * @Description
  * @Date 2025/2/10 11:36
  **/
-//@Configuration
-//@Profile("custom")
+@Configuration
+@Profile("custom")
 public class AppConfig {
-//    @Bean
+    @Bean
     public FileRepository fileRepository() {
         return new FileRepository();
     }
 
-//    @Bean
+    @Bean
     public GitRepository gitRepository() {
         return new GitRepository();
     }
