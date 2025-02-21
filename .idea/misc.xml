@@ -5,11 +5,18 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-eureka/eureka-loadbalanced/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-eureka/eureka-loadbalance/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-openfeign2/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-provider/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/eureka-provider/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-config/spring-cloud-config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-eureka/eureka-loadbalanced/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-openfeign2/pom.xml" />
       </set>
     </option>
   </component>

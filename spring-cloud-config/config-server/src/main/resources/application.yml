@@ -6,10 +6,3 @@
 #-----------------file system backend--------------------
 #spring.profiles.active=native
 #spring.cloud.config.server.git.uri= file://${user.home}/Document/spring-cloud
-server:
-  port: 8888
-spring:
-  application:
-    name: config-server
-  profiles:
-    active: custom

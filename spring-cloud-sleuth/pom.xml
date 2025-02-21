@@ -11,6 +11,7 @@
 
     <groupId>org.pt</groupId>
     <artifactId>spring-cloud-sleuth</artifactId>
+    <description>服务跟踪</description>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

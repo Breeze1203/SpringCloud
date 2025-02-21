@@ -6,30 +6,60 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="config-server" />
         <module name="spring-cloud-openfeign" />
         <module name="spring-cloud-config" />
         <module name="config-client" />
-        <module name="spring-cloud-gateway" />
-        <module name="spring-cloud-consul" />
+        <module name="eureka-loadbalance" />
+        <module name="spring-cloud-stream" />
+        <module name="spring-cloud-eureka" />
+        <module name="eureka-server" />
         <module name="spring-cloud-sleuth" />
+        <module name="config-server" />
+        <module name="spring-cloud-circuitbreaker" />
+        <module name="eureka-provider" />
+        <module name="spring-cloud-bus" />
+        <module name="spring-cloud-gateway" />
+        <module name="eureka-consummer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="eureka-consummer (1)" target="17" />
+      <module name="eureka-consummer (2)" target="17" />
+      <module name="eureka-loadbalanced" target="17" />
+      <module name="eureka-provider (1)" target="17" />
+      <module name="eureka-provider (2)" target="17" />
       <module name="spring-cloud-config-server" target="17" />
+      <module name="spring-cloud-openfeign (1)" target="17" />
+      <module name="spring-cloud-openfeign (2)" target="17" />
+      <module name="spring-cloud-openfeign2" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="config-client" options="-parameters" />
       <module name="config-server" options="-parameters" />
+      <module name="eureka-consummer" options="-parameters" />
+      <module name="eureka-consummer (1)" options="-parameters" />
+      <module name="eureka-consummer (2)" options="-parameters" />
+      <module name="eureka-loadbalance" options="-parameters" />
+      <module name="eureka-loadbalanced" options="-parameters" />
+      <module name="eureka-provider" options="-parameters" />
+      <module name="eureka-provider (1)" options="-parameters" />
+      <module name="eureka-provider (2)" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
       <module name="spring-cloud" options="" />
+      <module name="spring-cloud-bus" options="-parameters" />
+      <module name="spring-cloud-circuitbreaker" options="-parameters" />
       <module name="spring-cloud-config" options="-parameters" />
       <module name="spring-cloud-config-server" options="-parameters" />
-      <module name="spring-cloud-consul" options="-parameters" />
+      <module name="spring-cloud-eureka" options="-parameters" />
       <module name="spring-cloud-gateway" options="-parameters" />
       <module name="spring-cloud-openfeign" options="-parameters" />
+      <module name="spring-cloud-openfeign (1)" options="-parameters" />
+      <module name="spring-cloud-openfeign (2)" options="-parameters" />
+      <module name="spring-cloud-openfeign2" options="-parameters" />
       <module name="spring-cloud-sleuth" options="-parameters" />
+      <module name="spring-cloud-stream" options="-parameters" />
     </option>
   </component>
 </project>

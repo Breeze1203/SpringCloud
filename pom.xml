@@ -18,10 +18,17 @@
         <module>spring-cloud-config</module>
         <module>spring-cloud-config/config-server</module>
         <module>spring-cloud-config/config-client</module>
+        <module>spring-cloud-bus</module>
         <module>spring-cloud-gateway</module>
-        <module>spring-cloud-consul</module>
         <module>spring-cloud-openfeign</module>
         <module>spring-cloud-sleuth</module>
+        <module>spring-cloud-eureka</module>
+        <module>spring-cloud-eureka/eureka-server</module>
+        <module>spring-cloud-eureka/eureka-consummer</module>
+        <module>spring-cloud-eureka/eureka-provider</module>
+        <module>spring-cloud-eureka/eureka-loadbalance</module>
+        <module>spring-cloud-circuitbreaker</module>
+        <module>spring-cloud-stream</module>
     </modules>
     <properties>
         <java.version>17</java.version>
@@ -42,7 +49,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
     </dependencies>
     <build>
