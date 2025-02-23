@@ -16,7 +16,10 @@
         <module name="spring-cloud-sleuth" />
         <module name="config-server" />
         <module name="spring-cloud-circuitbreaker" />
+        <module name="bus-service-c" />
         <module name="eureka-provider" />
+        <module name="bus-service-b" />
+        <module name="bus-service-a" />
         <module name="spring-cloud-bus" />
         <module name="spring-cloud-gateway" />
         <module name="eureka-consummer" />
@@ -36,6 +39,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bus-service-a" options="-parameters" />
+      <module name="bus-service-b" options="-parameters" />
+      <module name="bus-service-c" options="-parameters" />
       <module name="config-client" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="eureka-consummer" options="-parameters" />

@@ -2,6 +2,9 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/eureka-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-bus/bus-service-a/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-bus/bus-service-b/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-bus/bus-service-c/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-bus/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-circuitbreaker/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-config/config-client/src/main/java" charset="UTF-8" />

@@ -29,6 +29,9 @@
         <module>spring-cloud-eureka/eureka-loadbalance</module>
         <module>spring-cloud-circuitbreaker</module>
         <module>spring-cloud-stream</module>
+        <module>spring-cloud-bus/bus-service-a</module>
+        <module>spring-cloud-bus/bus-service-c</module>
+        <module>spring-cloud-bus/bus-service-b</module>
     </modules>
     <properties>
         <java.version>17</java.version>
