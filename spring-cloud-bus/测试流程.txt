@@ -1,0 +1,11 @@
+依次启动a b c 服务
+请求查看message属性值
+curl -X POST http://localhost:7071/message
+curl -X POST http://localhost:7072/message
+
+修改配置文件属性值bus-dev.properties 提交到远程仓库
+curl -X POST http://localhost:7070/actuator/busrefresh
+请求查看message属性值
+curl -X POST http://localhost:7071/message
+curl -X POST http://localhost:7072/message
+输出将是最新到属性
