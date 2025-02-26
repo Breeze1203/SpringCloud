@@ -2,6 +2,14 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/eureka-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-alibaba/config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-alibaba/loadbalancer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-alibaba/nacos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-alibaba/open-feign/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-alibaba/seata/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-alibaba/sentinel/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-alibaba/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-alibaba/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-bus/bus-service-a/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-bus/bus-service-b/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-bus/bus-service-c/src/main/java" charset="UTF-8" />
@@ -19,10 +27,16 @@
     <file url="file://$PROJECT_DIR$/spring-cloud-eureka/eureka-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-micrometer/sleuth-feign/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-micrometer/sleuth-zipkin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-micrometer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-micrometer/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-openfeign/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-openfeign2/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/spring-cloud-sleuth/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-stream/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-tracing/service-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-tracing/service-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-tracing/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>

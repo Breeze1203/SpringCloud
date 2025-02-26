@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/spring-cloud-eureka/eureka-loadbalance/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-openfeign2/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-tracing/service-consumer/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -16,7 +17,10 @@
         <option value="$PROJECT_DIR$/eureka-provider/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-config/spring-cloud-config-server/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-eureka/eureka-loadbalanced/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-micrometer/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-openfeign2/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-sleuth/sleuth-feign/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-sleuth/sleuth-zipkin/pom.xml" />
       </set>
     </option>
   </component>
