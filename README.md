@@ -1,6 +1,7 @@
 <h5 align="center">
-  <img alt="SpringBoot" src="https://img.shields.io/badge/-SpringBoot--3.4.X-007396?style=flat-square&logo=java&logoColor=white" />
-  <img alt="SpringCloud" src="https://img.shields.io/badge/-SpringCloud--latest-00ADD8?style=flat-square&logo=go&logoColor=white" />
+  <img alt="SpringBoot" src="https://img.shields.io/badge/-SpringBoot--3.4.X-007396?style=flat-square&logo=SpringBoot&logoColor=white" />
+  <img alt="SpringCloud" src="https://img.shields.io/badge/-SpringCloud--latest-00ADD8?style=flat-square&logo=SpringCloud&logoColor=white" />
+  <img alt="JAVA" src="https://img.shields.io/badge/-JDK--17-4479A1?style=flat-square&logo=JAVA&logoColor=white" />
 </h5>
 
 Spring Cloud                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 项目根目录<br>
