@@ -2,6 +2,14 @@
   <img alt="SpringBoot" src="https://img.shields.io/badge/-SpringBoot--3.4.X-007396?style=flat-square&logo=SpringBoot&logoColor=white" />
   <img alt="SpringCloud" src="https://img.shields.io/badge/-SpringCloud--latest-00ADD8?style=flat-square&logo=SpringCloud&logoColor=white" />
   <img alt="JAVA" src="https://img.shields.io/badge/-JDK--17-4479A1?style=flat-square&logo=JAVA&logoColor=white" />
+  <img alt="bus" src="https://img.shields.io/badge/SpringCloudBus--消息总线-234479?style=flat-square&logo=bus&logoColor=white" />
+  <img alt="circuitbreaker" src="https://img.shields.io/badge/-circuitbreaker--断路器-FCC624?style=flat-square&logo=circuitbreaker&logoColor=white" />
+  <img alt="config" src="https://img.shields.io/badge/-SpringCloudConfig--分布式配置中心-%2335495e?style=flat-square&logo=vue.js&logoColor=white" />
+  <img alt="eureka" src="https://img.shields.io/badge/-Eureka--分布式注册中心-4479A1?style=flat-square&logo=eureka&logoColor=white" />
+  <img alt="loadbalance" src="https://img.shields.io/badge/-loadbalance--负载均衡-45b8d8?style=flat-square&logo=loadbalance&logoColor=white" />
+  <img alt="gateway" src="https://img.shields.io/badge/-gateway--服务网关-46a2f1?style=flat-square&logo=gateway&logoColor=white" />
+  <img alt="openfeign" src="https://img.shields.io/badge/-openfeign--远程调用-46a2f1?style=flat-square&logo=openfeign&logoColor=white" />
+  <img alt="micrometer+zipkin" src="https://img.shields.io/badge/-micrometer+zipkin--链路追踪-F05032?style=flat-square&logo=git&logoColor=white" />
 </h5>
 
 Spring Cloud                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 项目根目录<br>
