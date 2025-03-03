@@ -1,0 +1,13 @@
+server:
+  port: 8080  # Client运行在8080端口
+logging:
+  level:
+    org.springframework.security: TRACE  # 可选：用于调试
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: pt200103  # 添加 Redis 密码
+  session:
+    store-type: redis
