@@ -14,11 +14,6 @@
   <img alt="springsecurity" src="https://img.shields.io/badge/-springsecurity--安全框架-F05032?style=flat-square&logo=springsecurity&logoColor=white" />
 </h5>
 <br>
-<br>
-<br>
-<br>
-<br>
-
 |---boo                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# spring-cloud-config 配置文件夹<br>
 |---bus                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# spring-cloud-bus 配置文件夹<br>
 |---spring-cloud-alibaba             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# spring-cloud-alibaba 各组件使用（待完善）<br>
