@@ -1,5 +1,5 @@
 server:
-  port: 8080  # Client运行在8080端口
+  port: 5555
 logging:
   level:
     org.springframework.security: TRACE  # 可选：用于调试

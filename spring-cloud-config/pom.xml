@@ -8,10 +8,15 @@
         <artifactId>spring-cloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+    <packaging>pom</packaging>
 
     <groupId>org.pt</groupId>
     <artifactId>spring-cloud-config</artifactId>
     <description>spring-cloud-config模块</description>
+    <modules>
+        <module>config-server</module>
+        <module>config-client</module>
+    </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>

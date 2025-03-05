@@ -8,10 +8,13 @@
         <artifactId>spring-cloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
+    <packaging>pom</packaging>
     <groupId>org.pt</groupId>
     <artifactId>spring-cloud-tracing</artifactId>
-
+    <modules>
+        <module>service-provider</module>
+        <module>service-consumer</module>
+    </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>

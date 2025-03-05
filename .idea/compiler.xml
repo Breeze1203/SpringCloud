@@ -7,11 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-cloud-openfeign" />
-        <module name="spring-cloud-config" />
         <module name="config-client" />
-        <module name="spring-cloud-eureka" />
+        <module name="oauth-client" />
         <module name="eureka-server" />
         <module name="open-feign" />
+        <module name="oauth-server" />
         <module name="nacos" />
         <module name="loadbalancer" />
         <module name="spring-cloud-circuitbreaker" />
@@ -19,14 +19,13 @@
         <module name="bus-service-b" />
         <module name="bus-service-a" />
         <module name="spring-cloud-gateway" />
+        <module name="spring-ai" />
         <module name="eureka-consummer" />
         <module name="sentinel" />
         <module name="eureka-loadbalance" />
         <module name="spring-cloud-stream" />
-        <module name="spring-cloud-tracing" />
         <module name="config-server" />
         <module name="eureka-provider" />
-        <module name="spring-cloud-bus" />
         <module name="service-consumer" />
         <module name="service-provider" />
         <module name="config" />
@@ -39,6 +38,9 @@
       <module name="eureka-loadbalanced" target="17" />
       <module name="eureka-provider (1)" target="17" />
       <module name="eureka-provider (2)" target="17" />
+      <module name="oauth-client-a" target="17" />
+      <module name="oauthe-server (1)" target="17" />
+      <module name="oauthe-server (2)" target="17" />
       <module name="service-provider (1)" target="17" />
       <module name="service-provider (2)" target="17" />
       <module name="sleuth-feign" target="17" />
@@ -69,6 +71,11 @@
       <module name="eureka-server" options="-parameters" />
       <module name="loadbalancer" options="-parameters" />
       <module name="nacos" options="-parameters" />
+      <module name="oauth-client" options="-parameters" />
+      <module name="oauth-client-a" options="-parameters" />
+      <module name="oauth-server" options="-parameters" />
+      <module name="oauthe-server (1)" options="-parameters" />
+      <module name="oauthe-server (2)" options="-parameters" />
       <module name="open-feign" options="-parameters" />
       <module name="seata" options="-parameters" />
       <module name="sentinel" options="-parameters" />
@@ -78,13 +85,14 @@
       <module name="service-provider (2)" options="-parameters" />
       <module name="sleuth-feign" options="-parameters" />
       <module name="sleuth-zipkin" options="-parameters" />
+      <module name="spring-ai" options="-parameters" />
       <module name="spring-cloud" options="" />
       <module name="spring-cloud-alibaba" options="" />
-      <module name="spring-cloud-bus" options="-parameters" />
+      <module name="spring-cloud-bus" options="" />
       <module name="spring-cloud-circuitbreaker" options="-parameters" />
-      <module name="spring-cloud-config" options="-parameters" />
+      <module name="spring-cloud-config" options="" />
       <module name="spring-cloud-config-server" options="-parameters" />
-      <module name="spring-cloud-eureka" options="-parameters" />
+      <module name="spring-cloud-eureka" options="" />
       <module name="spring-cloud-gateway" options="-parameters" />
       <module name="spring-cloud-micrometer" options="" />
       <module name="spring-cloud-openfeign" options="-parameters" />
@@ -92,7 +100,8 @@
       <module name="spring-cloud-openfeign (2)" options="-parameters" />
       <module name="spring-cloud-openfeign2" options="-parameters" />
       <module name="spring-cloud-stream" options="-parameters" />
-      <module name="spring-cloud-tracing" options="-parameters" />
+      <module name="spring-cloud-tracing" options="" />
+      <module name="spring-security" options="" />
     </option>
   </component>
 </project>

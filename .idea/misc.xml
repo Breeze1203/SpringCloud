@@ -10,6 +10,17 @@
         <option value="$PROJECT_DIR$/spring-cloud-openfeign2/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-provider/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-tracing/service-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-security/oauthe-client/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-security/oauth-client/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-ai/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-stream/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-alibaba/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-alibaba/seata/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-config/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-bus/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-tracing/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-security/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -21,6 +32,7 @@
         <option value="$PROJECT_DIR$/spring-cloud-openfeign2/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-sleuth/sleuth-feign/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-sleuth/sleuth-zipkin/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-security/oauth-client-a/pom.xml" />
       </set>
     </option>
   </component>

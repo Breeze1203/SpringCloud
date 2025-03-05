@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/eureka-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-ai/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-alibaba/config/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-alibaba/loadbalancer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-alibaba/nacos/src/main/java" charset="UTF-8" />
@@ -14,6 +15,7 @@
     <file url="file://$PROJECT_DIR$/spring-cloud-bus/bus-service-b/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-bus/bus-service-c/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-bus/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-bus/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-circuitbreaker/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-config/config-client/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-config/config-server/src/main/java" charset="UTF-8" />
@@ -26,6 +28,7 @@
     <file url="file://$PROJECT_DIR$/spring-cloud-eureka/eureka-provider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-eureka/eureka-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-eureka/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-micrometer/sleuth-feign/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-micrometer/sleuth-zipkin/src/main/java" charset="UTF-8" />
@@ -37,6 +40,12 @@
     <file url="file://$PROJECT_DIR$/spring-cloud-tracing/service-consumer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-tracing/service-provider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-tracing/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-tracing/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-security/oauth-client-a/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-security/oauth-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-security/oauth-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-security/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>

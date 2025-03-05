@@ -40,6 +40,7 @@
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---service-consumer                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 服务消费者<br>
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---service-provider                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 服务提供者<br>
 
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---service-provider                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 服务提供者<br>
 
 
 

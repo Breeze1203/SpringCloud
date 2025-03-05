@@ -1,0 +1,142 @@
+version: '3.8'
+# 服务注册中心
+services:
+  eureka-server:
+    build:
+      context: ./spring-cloud-eureka/eureka-server
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+
+# 服务提供者
+  eureka-provider:
+    build:
+      context: ./spring-cloud-eureka/eureka-provider
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    depends_on:
+      - eureka-server
+
+# 服务消费者
+  eureka-consummer:
+    build:
+      context: ./spring-cloud-eureka/eureka-consummer
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - eureka-server
+      - eureka-provider
+
+# 服务消费者 负载均衡
+  eureka-loadbalance:
+    build:
+      context: ./spring-cloud-eureka/eureka-loadbalance
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
+    depends_on:
+      - eureka-server
+
+# 配置中心服务端
+  config-server:
+    build:
+      context: ./spring-cloud-config/config-server
+      dockerfile: Dockerfile
+    ports:
+      - "8087:8087"
+    depends_on:
+      - eureka-server
+
+# 配置中心客户端
+  config-client:
+    build:
+      context: ./spring-cloud-config/config-client
+      dockerfile: Dockerfile
+    ports:
+      - "8088:8088"
+    depends_on:
+      - config-server
+# 服务网关
+  gateway:
+    build:
+      context: ./spring-cloud-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8086:8086"
+    depends_on:
+      - eureka-server
+# 远程调用
+  openfeign:
+    build:
+      context: ./spring-cloud-openfeign
+      dockerfile: Dockerfile
+    ports:
+      - "8085:8085"
+    depends_on:
+      - eureka-server
+# 断路器
+  circuitbreaker:
+    build:
+      context: ./spring-cloud-circuitbreaker
+      dockerfile: Dockerfile
+    ports:
+      - "8084:8084"
+    depends_on:
+      - eureka-server
+# 消息总线a服务
+  bus-a:
+    build:
+      context: ./spring-cloud-bus/bus-service-a
+      dockerfile: Dockerfile
+    ports:
+      - "7070:7070"
+
+#消息总线b服务
+  bus-b:
+    build:
+      context: ./spring-cloud-bus/bus-service-b
+      dockerfile: Dockerfile
+    ports:
+      - "7071:7071"
+# 消息总线c服务
+  bus-c:
+    build:
+      context: ./spring-cloud-bus/bus-service-c
+      dockerfile: Dockerfile
+    ports:
+      - "7072:7072"
+
+# 链路追踪
+  trace-consumer:
+    build:
+      context: ./spring-cloud-tracing/service-consumer
+      dockerfile: Dockerfile
+    ports:
+      - "6666:6666"
+
+# 链路追踪
+  trace-provider:
+    build:
+      context: ./spring-cloud-tracing/service-provider
+      dockerfile: Dockerfile
+    ports:
+      - "6667:6667"
+
+# springsecurity + oauth 服务端
+  oauth-server:
+    build:
+      context: ./spring-security/oauth-server
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+ # springsecurity + oauth 客户端
+  oauth-client:
+    build:
+      context: ./spring-security/oauth-client
+      dockerfile: Dockerfile
+    ports:
+      - "5555:5555"
+    depends_on:
+      - oauth-server
