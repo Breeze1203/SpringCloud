@@ -10,13 +10,10 @@
   <img alt="gateway" src="https://img.shields.io/badge/-gateway--服务网关-46a2f1?style=flat-square&logo=gateway&logoColor=white" />
   <img alt="openfeign" src="https://img.shields.io/badge/-openfeign--远程调用-46a2f1?style=flat-square&logo=openfeign&logoColor=white" />
   <img alt="micrometer+zipkin" src="https://img.shields.io/badge/-micrometer+zipkin--链路追踪-F05032?style=flat-square&logo=git&logoColor=white" />
+  <img alt="oauth" src="https://img.shields.io/badge/-oauth--认证-46a2f1?style=flat-square&logo=oauth&logoColor=white" />
+  <img alt="springsecurity" src="https://img.shields.io/badge/-springsecurity--安全框架-F05032?style=flat-square&logo=springsecurity&logoColor=white" />
 </h5>
 <br>
-<br>
-<br>
-<br>
-<br>
-
 |---boo                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# spring-cloud-config 配置文件夹<br>
 |---bus                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# spring-cloud-bus 配置文件夹<br>
 |---spring-cloud-alibaba             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# spring-cloud-alibaba 各组件使用（待完善）<br>
@@ -39,6 +36,9 @@
 |---spring-cloud-tracing            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 服务跟踪（替代 Sleuth，选用 micrometer+zipkin）（✔️）<br>
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---service-consumer                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 服务消费者<br>
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---service-provider                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 服务提供者<br>
+|---springsecurity            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# springscurity自定义服务完成oauth认证（✔️）<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---oauth-client         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oauth客户端（✔️）<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---oauth-server            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# oauth服务端（✔️）<br>
 
 |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---service-provider                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 服务提供者<br>
 
