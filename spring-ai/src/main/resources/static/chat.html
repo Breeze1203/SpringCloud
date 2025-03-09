@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI对话演示</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #fafafa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .chat-container {
+      width: 100%;
+      max-width: 800px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 80vh;
+    }
+    .chat-header {
+      background-color: #fff;
+      color: #333;
+      padding: 16px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .chat-messages {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      background-color: #fafafa;
+    }
+    .message {
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+    }
+    .message.user {
+      align-items: flex-end;
+    }
+    .message.ai {
+      align-items: flex-start;
+    }
+    .message-content {
+      max-width: 70%;
+      padding: 12px;
+      border-radius: 12px;
+      word-wrap: break-word;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+    .message.user .message-content {
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 12px 12px 0 12px;
+    }
+    .message.ai .message-content {
+      background-color: #fff;
+      color: #333;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px 12px 12px 0;
+    }
+    .chat-input {
+      display: flex;
+      padding: 12px;
+      background-color: #fff;
+      border-top: 1px solid #e0e0e0;
+      align-items: center;
+    }
+    .chat-input input {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      outline: none;
+      font-size: 14px;
+      margin-right: 8px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .chat-input input:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+    }
+    .chat-input input:not(:placeholder-shown) {
+      border-color: #007bff;
+    }
+    .chat-input button {
+      padding: 12px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+    }
+    .chat-input button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .chat-input button svg {
+      width: 24px;
+      height: 24px;
+      fill: #007bff;
+      transition: fill 0.3s ease;
+    }
+    .chat-input button:not(:disabled):hover svg {
+      fill: #0056b3;
+    }
+  </style>
+</head>
+<body>
+<div class="chat-container">
+  <div class="chat-header">AI对话演示</div>
+  <div class="chat-messages" id="chat-messages">
+    <!-- 对话消息将动态插入到这里 -->
+  </div>
+  <div class="chat-input">
+    <input type="text" id="message-input" placeholder="输入你的问题..." />
+    <button id="send-button" disabled>
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  const ws = new WebSocket('ws://localhost:8080/chat'); // 替换为你的WebSocket地址
+
+  const messageInput = document.getElementById('message-input');
+  const sendButton = document.getElementById('send-button');
+
+  // 监听输入框内容变化
+  messageInput.addEventListener('input', () => {
+    if (messageInput.value.trim()) {
+      sendButton.disabled = false;
+    } else {
+      sendButton.disabled = true;
+    }
+  });
+
+  ws.onmessage = function(event) {
+    appendMessage('ai', event.data);
+  };
+
+  function sendMessage() {
+    const input = document.getElementById('message-input');
+    const message = input.value.trim();
+    if (message) {
+      ws.send(message);
+      appendMessage('user', message);
+      input.value = '';
+    }
+  }
+
+  function appendMessage(sender, content) {
+    const messagesDiv = document.getElementById('chat-messages');
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('message', sender);
+    const contentDiv = document.createElement('div');
+    contentDiv.classList.add('message-content');
+    contentDiv.textContent = content;
+    messageDiv.appendChild(contentDiv);
+    messagesDiv.appendChild(messageDiv);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight; // 滚动到底部
+  }
+
+  messageInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter' && !sendButton.disabled) {
+      sendMessage();
+    }
+  });
+
+  sendButton.addEventListener('click', sendMessage);
+</script>
+</body>
+</html>

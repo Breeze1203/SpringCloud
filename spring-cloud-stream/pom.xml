@@ -17,6 +17,22 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream-binder-kafka-streams</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
@@ -24,7 +40,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>3.4.2</version>
                 <configuration>
-                    <mainClass>org.pt.ConfigServerApplication</mainClass>
+                    <mainClass>org.pt.KafkaStreamApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
