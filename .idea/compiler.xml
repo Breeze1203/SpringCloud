@@ -7,28 +7,28 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-cloud-openfeign" />
+        <module name="sentinel" />
         <module name="config-client" />
         <module name="oauth-client" />
+        <module name="eureka-loadbalance" />
+        <module name="spring-cloud-stream" />
         <module name="eureka-server" />
         <module name="open-feign" />
-        <module name="oauth-server" />
         <module name="nacos" />
+        <module name="oauth-server" />
+        <module name="config-server" />
         <module name="loadbalancer" />
         <module name="spring-cloud-circuitbreaker" />
         <module name="bus-service-c" />
         <module name="bus-service-b" />
+        <module name="eureka-provider" />
         <module name="bus-service-a" />
         <module name="spring-cloud-gateway" />
-        <module name="spring-ai" />
-        <module name="eureka-consummer" />
-        <module name="sentinel" />
-        <module name="eureka-loadbalance" />
-        <module name="spring-cloud-stream" />
-        <module name="config-server" />
-        <module name="eureka-provider" />
         <module name="service-consumer" />
+        <module name="spring-ai" />
         <module name="service-provider" />
         <module name="config" />
+        <module name="eureka-consummer" />
         <module name="seata" />
       </profile>
     </annotationProcessing>

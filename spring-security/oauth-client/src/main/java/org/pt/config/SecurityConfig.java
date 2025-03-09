@@ -9,9 +9,12 @@ import org.springframework.security.config.annotation.web.configurers.oauth2.cli
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClientService;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.oauth2.client.endpoint.OAuth2AccessTokenResponseClient;
+import org.springframework.security.oauth2.client.endpoint.OAuth2AuthorizationCodeGrantRequest;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
-import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
 import org.springframework.security.oauth2.client.web.HttpSessionOAuth2AuthorizationRequestRepository;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
@@ -34,7 +37,7 @@ public class SecurityConfig {
 
     private final OAuth2AccessTokenResponseClient tokenResponseClient;
 
-    public SecurityConfig(ClientRegistrationRepository clientRegistrationRepository, OAuth2AccessTokenResponseClient tokenResponseClient) {
+    public SecurityConfig(ClientRegistrationRepository clientRegistrationRepository,OAuth2AccessTokenResponseClient<OAuth2AuthorizationCodeGrantRequest> tokenResponseClient) {
         this.clientRegistrationRepository = clientRegistrationRepository;
         this.tokenResponseClient = tokenResponseClient;
     }
@@ -74,7 +77,7 @@ public class SecurityConfig {
                         // 将授权请求存储在会话中，使用默认的存储方式
                         .authorizationRequestRepository(new HttpSessionOAuth2AuthorizationRequestRepository())
                 )
-                // 自定义令牌端点行为（获取访问令牌）
+//                // 自定义令牌端点行为（获取访问令牌）
                 .tokenEndpoint(token -> token
                         .accessTokenResponseClient(tokenResponseClient)// 默认令牌交换客户端
                 )
@@ -83,24 +86,7 @@ public class SecurityConfig {
 //                        .userService(customOAuth2UserService) // 使用自定义用户服务
 //                )
                 // 自定义登录成功和失败的处理逻辑
-                .successHandler((request, response, authentication) -> {
-                    System.out.println("--------------------授权成功----------------");
-                    System.out.println("登录成功，用户: " + authentication.getName());
-                    // 设置响应内容类型为 HTML
-                    response.setContentType("application/json;charset=UTF-8");
-                    ObjectMapper objectMapper = new ObjectMapper();
-                    // 构造 JSON 数据
-                    Map<String, Object> responseData = new HashMap<>();
-                    responseData.put("status", "success");
-                    responseData.put("message", "登录成功");
-                    responseData.put("authentication", authentication);
-                    responseData.put("redirect", "/dashboard");
-                    // 使用 ObjectMapper 直接写入响应
-                    PrintWriter out = response.getWriter();
-                    objectMapper.writeValue(out, responseData);
-                    out.flush();
-
-                })
+                .successHandler(new CustomizeSuccessHandler())
                 .failureHandler((request, response, exception) -> {
                     System.out.println("--------------------授权失败----------------");
                     System.out.println("登录失败: " + exception.getMessage());

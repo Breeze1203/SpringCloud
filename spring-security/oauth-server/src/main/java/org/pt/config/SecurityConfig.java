@@ -22,10 +22,8 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 import org.springframework.security.web.util.matcher.MediaTypeRequestMatcher;
-import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
 @Configuration
-@EnableRedisHttpSession
 public class SecurityConfig {
     private final OAuth2AuthorizationServerConfigurer authorizationServerConfigurer;
 
@@ -40,8 +38,7 @@ public class SecurityConfig {
         http
                 .securityMatcher(authorizationServerConfigurer.getEndpointsMatcher())
                 .with(authorizationServerConfigurer, Customizer.withDefaults())
-                .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/oauth2/token").permitAll() // 允许令牌端点匿名访问
+                .authorizeHttpRequests((authorize) -> authorize// 允许令牌端点匿名访问
                         .anyRequest().authenticated()
                 )
                 .exceptionHandling((exceptions) -> exceptions
@@ -49,7 +46,7 @@ public class SecurityConfig {
                                 new LoginUrlAuthenticationEntryPoint("/login"),
                                 new MediaTypeRequestMatcher(MediaType.TEXT_HTML)
                         )
-                );
+                ).oidcLogout(Customizer.withDefaults());
         return http.build();
     }
 
@@ -58,7 +55,6 @@ public class SecurityConfig {
     public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/oauth2/**").permitAll() // 避免干扰 OAuth2 端点
                         .anyRequest().authenticated()
                 )
                 .formLogin(Customizer.withDefaults());
@@ -68,8 +64,8 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails userDetails = User.withDefaultPasswordEncoder()
-                .username("user")
-                .password("password")
+                .username("pt")
+                .password("1234")
                 .roles("USER")
                 .build();
         return new InMemoryUserDetailsManager(userDetails);
