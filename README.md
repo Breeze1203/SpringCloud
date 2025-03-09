@@ -1,73 +1,40 @@
-.
-├── HELP.md
-├── README.md
-├── boo
+```
+├── boo                                             springcloud config 配置文件
 │   ├── dispace-dev.properties
 │   ├── dispace-prod.properties
 │   └── dispace-test.properties
-├── bus
+├── bus                                             消息总线配置文件
 │   └── bus-dev.properties
-├── docker-compose.yml
-├── jvm.log
-├── pom.xml
-├── spring-ai
-│   ├── HELP.md
-│   ├── mvnw
-│   ├── mvnw.cmd
-│   ├── pom.xml
-│   ├── src
-│   └── target
-├── spring-cloud-alibaba
+├── docker-compose.yml                              docker一键启动微服务
+├── spring-ai                                       spring-ai模块
+├── spring-cloud-alibaba                            alibaba模块（待完善）
 │   ├── config
 │   ├── loadbalancer
 │   ├── nacos
 │   ├── open-feign
-│   ├── pom.xml
 │   ├── seata
 │   └── sentinel
-├── spring-cloud-bus
+├── spring-cloud-bus                                消息总线组件
 │   ├── bus-service-a
 │   ├── bus-service-b
 │   ├── bus-service-c
-│   ├── pom.xml
 │   └── 测试流程.txt
-├── spring-cloud-circuitbreaker
-│   ├── Dockerfile
-│   ├── pom.xml
-│   ├── src
-│   └── target
-├── spring-cloud-config
+├── spring-cloud-circuitbreaker                     服务断路器
+├── spring-cloud-config                             服务配置中心
 │   ├── config-client
 │   ├── config-server
-│   ├── pom.xml
-│   └── target
-├── spring-cloud-eureka
+├── spring-cloud-eureka                             注册中心
 │   ├── eureka-consummer
-│   ├── eureka-loadbalance
+│   ├── eureka-loadbalance                          负载均衡
 │   ├── eureka-provider
 │   ├── eureka-server
-│   └── pom.xml
 ├── spring-cloud-gateway
-│   ├── Dockerfile
-│   ├── pom.xml
-│   ├── src
-│   └── target
-├── spring-cloud-openfeign
-│   ├── Dockerfile
-│   ├── pom.xml
-│   ├── src
-│   └── target
+├── spring-cloud-openfeign                          服务网关
 ├── spring-cloud-stream
-│   ├── pom.xml
-│   ├── src
-│   └── target
-├── spring-cloud-tracing
-│   ├── pom.xml
+├── spring-cloud-tracing                            链路追踪
 │   ├── service-consumer
 │   └── service-provider
-└── spring-security
+└── spring-security                                 springsecurity自定义服务完成oauth认证
     ├── oauth-client
     ├── oauth-server
-    └── pom.xml
-
-44 directories, 27 files
+```
