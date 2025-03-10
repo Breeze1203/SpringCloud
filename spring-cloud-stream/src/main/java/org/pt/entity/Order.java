@@ -1,12 +1,14 @@
 package org.pt.entity;
 
+import java.io.Serializable;
+
 /**
  * @ClassName Order
  * @Author pt
  * @Description
  * @Date 2025/3/6 16:29
  **/
-public class Order {
+public class Order implements Serializable {
     private Long orderId;
     private String customerId;
     private String product;
@@ -17,6 +19,9 @@ public class Order {
         this.customerId = customerId;
         this.product = product;
         this.amount = amount;
+    }
+
+    public Order() {
     }
 
     public Long getOrderId() {
@@ -49,5 +54,15 @@ public class Order {
 
     public void setAmount(Double amount) {
         this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId=" + orderId +
+                ", customerId='" + customerId + '\'' +
+                ", product='" + product + '\'' +
+                ", amount=" + amount +
+                '}';
     }
 }
