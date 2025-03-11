@@ -1,26 +1,53 @@
 spring:
   cloud:
+    function:
+      definition: process;producer;consumer;listconsumer;processAck;transactionalProducer;transactionalConsumer # 定义要使用的函数
     stream:
-      kafka:
-        binder:
-          brokers: localhost:9092
-          auto-create-topics: true
-        streams:
-          binder:
-            configuration:
-              default:
-                key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
-                value.serde: org.springframework.kafka.support.serializer.JsonSerde
-              spring.json.trusted.packages: org.pt.entity
-      function:
-        definition: processOrder
+      binder:
+        brokers: localhost:9092
       bindings:
-        processOrder-in-0:
-          destination: order
-          group: order-group
+        process-in-0: # process 函数的输入绑定
+          destination: string
           consumer:
-            application-id: order-processor
-        processOrder-out-0:
-          destination: high-value-topic
-        processOrder-out-1:
-          destination: normal-topic
+            concurrency: 1  # 并发消费者数
+        process-out-0: # process 函数的输出绑定
+          destination: to-string
+        producer-out-0: # producer 的输出绑定
+          destination: demo-topic
+          producer:
+            partition-count: 1  # 分区数
+        consumer-in-0: # consumer 的输入绑定
+          destination: demo-topic
+          group: demo-group  # 消费者组
+        consumer:
+          concurrency: 1  # 并发消费者数
+        listconsumer-in-0:
+          destination: list-topic
+          group: list-group
+          consumer:
+            batch-mode: true
+        processAck-in-0:
+          destination: ack-topic
+          group: ack-group
+          consumer:
+            concurrency: 1
+        transactionalProducer-out-0:
+          destination: trans-topic
+          producer:
+            partition-count: 1  # 分区数
+        transactionalConsumer-in-0:
+          destination: trans-topic
+          consumer:
+            concurrency: 4
+            max-attempts: 3  # 重试次数
+          error-handler-definition: ErrorHandler
+      default-binder: kafka
+
+
+
+
+
+
+
+
+
