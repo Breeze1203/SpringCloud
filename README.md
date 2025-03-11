@@ -30,7 +30,7 @@
 │   ├── eureka-server
 ├── spring-cloud-gateway
 ├── spring-cloud-openfeign                          服务网关
-├── spring-cloud-stream
+├── spring-cloud-stream                             事件驱动服务
 ├── spring-cloud-tracing                            链路追踪
 │   ├── service-consumer
 │   └── service-provider
