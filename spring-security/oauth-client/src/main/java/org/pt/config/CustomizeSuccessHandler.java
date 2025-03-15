@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class CustomizeSuccessHandler implements AuthenticationSuccessHandler {
     @Override
@@ -37,19 +36,20 @@ public class CustomizeSuccessHandler implements AuthenticationSuccessHandler {
         userInfo.put("authorities", authentication.getAuthorities());
         // 添加到响应数据
         responseData.put("code", 200);
-        responseData.put("message", "登录成功");
+        responseData.put("message", "success");
         responseData.put("data", userInfo);
         responseData.put("timestamp", System.currentTimeMillis());
-
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule()); // 添加对 Java 8 时间类型的支持
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS); // 可选：格式化日期为 ISO 字符串
-        PrintWriter writer = response.getWriter();
+        //PrintWriter writer = response.getWriter();
 
         try {
             // 先转换为 JSON 字符串，然后打印
             String jsonResponse = objectMapper.writeValueAsString(responseData);
-            writer.print(jsonResponse);
+            String redirectUri = "http://localhost:3000/callback?response=" + jsonResponse;
+            response.sendRedirect(redirectUri);
+            //writer.print(jsonResponse);
         } catch (JsonProcessingException e) {
             System.out.println(e.getMessage());
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
@@ -58,10 +58,12 @@ public class CustomizeSuccessHandler implements AuthenticationSuccessHandler {
             errorResponse.put("message", "服务器内部错误");
             errorResponse.put("timestamp", System.currentTimeMillis());
             String errorJson = objectMapper.writeValueAsString(errorResponse);
-            writer.print(errorJson);
+            String redirectUri = "http://localhost:3000/callback?response=" + errorJson;
+            response.sendRedirect(redirectUri);
+            //writer.print(errorJson);
         } finally {
-            writer.flush();
-            writer.close();
+            //writer.flush();
+            //writer.close();
         }
     }
 }

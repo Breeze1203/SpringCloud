@@ -55,9 +55,12 @@ public class SecurityConfig {
     public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((authorize) -> authorize
+                        .requestMatchers("/login", "/css/**", "/js/**").permitAll() // 允许公开访问登录页面和静态资源
                         .anyRequest().authenticated()
                 )
-                .formLogin(Customizer.withDefaults());
+                .formLogin(form -> form
+                        .loginPage("/login")
+                        .permitAll());
         return http.build();
     }
 
@@ -73,13 +76,13 @@ public class SecurityConfig {
 
     @Bean
     public RegisteredClientRepository registeredClientRepository() {
-        RegisteredClient oidcClient = RegisteredClient.withId("b")
-                .clientId("b-client")
+        RegisteredClient oidcClient = RegisteredClient.withId("echo")
+                .clientId("Echo-Admin")
                 .clientSecret("{noop}b-secret")
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
-                .redirectUri("http://localhost:5555/login/oauth2/code/b")
+                .redirectUri("http://localhost:5555/login/oauth2/code/echo")
                 .postLogoutRedirectUri("http://localhost:5555/")
                 .scope("read")
                 .scope("write")

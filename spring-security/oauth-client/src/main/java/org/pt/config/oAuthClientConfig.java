@@ -162,15 +162,15 @@ public class oAuthClientConfig {
     @Bean
     ClientRegistrationRepository clientRegistrationRepository() {
         // 指定客户端注册的唯一标识符，在Spring中用于区分不同的客户端配置，例如对应application.yml中的spring.security.oauth2.client.registration.b
-        ClientRegistration b = ClientRegistration.withRegistrationId("b")
+        ClientRegistration b = ClientRegistration.withRegistrationId("echo")
                 // 客户端ID，由授权服务器分配，用于标识此客户端，需与Server端注册的client-id一致，在授权请求中作为client_id参数
-                .clientId("b-client")
+                .clientId("Echo-Admin")
                 // 客户端密钥，明文形式，用于验证客户端身份，需与Server端注册的密钥匹配（去掉可能的{noop}前缀），通过Basic认证发送
                 .clientSecret("b-secret")
                 // 指定OAuth2授权类型，这里是授权码模式，Client先获取code再换取token，最安全常见的模式
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 // 重定向URI，Server授权后将用户重定向到此地址并附上授权码，必须与Server端注册的redirect-uris一致
-                .redirectUri("http://localhost:5555/login/oauth2/code/b")
+                .redirectUri("http://localhost:5555/login/oauth2/code/echo")
                 // 请求的权限范围，定义Client需要的权限，Server需支持这些scope，用户授权时会看到这些范围
                 .scope("read", "write","profile", OidcScopes.OPENID)
                 // 授权服务器的授权端点URL，Client将用户重定向到此地址开始OAuth2流程，用户在此登录并授权

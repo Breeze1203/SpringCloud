@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI对话演示</title>
+  <title>AI对话</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -137,7 +137,7 @@
 </div>
 
 <script>
-  const ws = new WebSocket('ws://localhost:8080/chat'); // 替换为你的WebSocket地址
+  const ws = new WebSocket('ws://localhost:7777/chat'); // 替换为你的WebSocket地址
 
   const messageInput = document.getElementById('message-input');
   const sendButton = document.getElementById('send-button');
