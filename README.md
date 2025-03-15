@@ -30,8 +30,8 @@
 │   ├── eureka-server
 ├── spring-cloud-gateway
 ├── spring-cloud-openfeign                          服务网关
-├── spring-cloud-stream
-├── spring-cloud-tracing                            链路追踪
+├── spring-cloud-stream                             事件驱动服务
+├── spring-cloud-tracing                            链路追踪 zipkin
 │   ├── service-consumer
 │   └── service-provider
 └── spring-security                                 springsecurity自定义服务完成oauth认证
