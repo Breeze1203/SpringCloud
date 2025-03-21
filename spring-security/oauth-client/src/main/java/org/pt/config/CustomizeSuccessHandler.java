@@ -42,7 +42,7 @@ public class CustomizeSuccessHandler implements AuthenticationSuccessHandler {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule()); // 添加对 Java 8 时间类型的支持
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS); // 可选：格式化日期为 ISO 字符串
-        //PrintWriter writer = response.getWriter();
+        //PrintWriter writer = resp.getWriter();
 
         try {
             // 先转换为 JSON 字符串，然后打印

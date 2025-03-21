@@ -46,7 +46,7 @@ public class LoadBalanceController {
         String url = String.format("http://%s:%s/getProvider", instance.getHost(), instance.getPort());
         System.out.println("Request URL: " + url);
         // 这里可以使用 RestTemplate 或其他 HTTP 客户端来发送请求
-        // String response = restTemplate.getForObject(url, String.class);
+        // String resp = restTemplate.getForObject(url, String.class);
         return "Request URL: " + url;
     }
 

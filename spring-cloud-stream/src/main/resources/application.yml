@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: stream
   cloud:
     function:
       definition: process;producer;consumer;listconsumer;processAck;transactionalProducer;transactionalConsumer # 定义要使用的函数
@@ -10,6 +12,7 @@ spring:
           destination: string
           consumer:
             concurrency: 1  # 并发消费者数
+            batch-mode: true
         process-out-0: # process 函数的输出绑定
           destination: to-string
         producer-out-0: # producer 的输出绑定
@@ -19,18 +22,26 @@ spring:
         consumer-in-0: # consumer 的输入绑定
           destination: demo-topic
           group: demo-group  # 消费者组
-        consumer:
           concurrency: 1  # 并发消费者数
+          consumer:
+            max-attempts: 2
+            concurrency: 2
+            batch-mode: true
+          error-handler-definition: ErrorHandler
         listconsumer-in-0:
           destination: list-topic
           group: list-group
           consumer:
             batch-mode: true
+            concurrency: 2
+          error-handler-definition: ErrorHandler
         processAck-in-0:
           destination: ack-topic
           group: ack-group
           consumer:
             concurrency: 1
+            batch-mode: true
+          error-handler-definition: ErrorHandler
         transactionalProducer-out-0:
           destination: trans-topic
           producer:
@@ -42,6 +53,16 @@ spring:
             max-attempts: 3  # 重试次数
           error-handler-definition: ErrorHandler
       default-binder: kafka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+server:
+  port: 3333
 
 
 

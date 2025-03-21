@@ -37,11 +37,11 @@ public class StreamConfig {
         return input -> "Processed: " + input;
     }
 
-    // 发送消息并确认消费者收到 发送消息
-    @Bean
-    public Supplier<String> producer() {
-        return () -> "Hello Kafka!";
-    }
+//    发送消息并确认消费者收到 发送消息
+//    @Bean
+//    public Supplier<String> producer() {
+//        return () -> "Hello Kafka!";
+//    }
 
     // 消费消息
     @Bean
@@ -55,15 +55,15 @@ public class StreamConfig {
     }
 
     // 注入 producer Bean 并定期触发
-    @Bean
-    public Supplier<String> triggerProducer(Supplier<String> producer) {
-        return producer;
-    }
-
-    @Scheduled(fixedRate = 5000)  // 每5秒触发一次
-    public void scheduleProducer(Supplier<String> triggerProducer) {
-        triggerProducer.get();  // 触发 producer 发送消息
-    }
+//    @Bean
+//    public Supplier<String> triggerProducer(Supplier<String> producer) {
+//        return producer;
+//    }
+//
+//    //@Scheduled(fixedRate = 5000)  // 每5秒触发一次
+//    public void scheduleProducer(Supplier<String> triggerProducer) {
+//        triggerProducer.get();  // 触发 producer 发送消息
+//    }
 
     /*
     手动提交

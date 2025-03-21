@@ -30,14 +30,14 @@ public class ProviderController {
     public String provider() {
         logger.info("Provider Service: Creating order");
         String paymentResponse = restTemplate.getForObject("http://localhost:6666/consumer", String.class);
-        logger.info("Provider Service: Payment response received");
+        logger.info("Provider Service: Payment resp received");
         return "Order Created -> " + paymentResponse;
     }
 
     @GetMapping("/openFeign")
     public String openFeign() {
         String Response = openFeignClient.getConsumer();
-        logger.info("Provider Service: Payment response received");
+        logger.info("Provider Service: Payment resp received");
         return "Order Created -> " + Response;
     }
 }

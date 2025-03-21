@@ -1,8 +1,6 @@
 package org.pt.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.cloud.client.circuitbreaker.CircuitBreaker;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
 import org.springframework.cloud.client.circuitbreaker.ReactiveCircuitBreaker;
 import org.springframework.cloud.client.circuitbreaker.ReactiveCircuitBreakerFactory;
@@ -22,15 +20,16 @@ import java.util.concurrent.TimeoutException;
  **/
 @Service
 public class BreakService {
-    private static final Logger LOG = LoggerFactory.getLogger(BreakService.class);
-
+    @Value("${server.port}")
+    private final String port;
     private final RestTemplate rest;
     private final CircuitBreakerFactory cbFactory;
 
     private final WebClient webClient;
     private final ReactiveCircuitBreaker readingListCircuitBreaker;
 
-    public BreakService(RestTemplate rest, CircuitBreakerFactory cbFactory, WebClient webClient, ReactiveCircuitBreakerFactory circuitBreakerFactory) {
+    public BreakService(@Value("${server.port}")String port, RestTemplate rest, CircuitBreakerFactory cbFactory, WebClient webClient, ReactiveCircuitBreakerFactory circuitBreakerFactory) {
+        this.port = port;
         this.rest = rest;
         this.cbFactory = cbFactory;
         this.webClient=webClient;
@@ -44,22 +43,21 @@ public class BreakService {
     表示当第一个Lambda表达式执行失败时（例如请求超时或服务不可用），执行的备用代码。这里直接返回字符串"fallback"作为备用结果
      */
     public String slow() {
-        return cbFactory.create("slow").run(() -> rest.getForObject("http://localhost:8084/getProvider", String.class), throwable -> "fallback");
+        return cbFactory.create("slow").run(() -> rest.getForObject("http://provider/getProvider", String.class), throwable -> "port:"+port);
     }
 
 
     public String slow_two() {
-        return cbFactory.create("slow_two").run(() -> rest.getForObject("http://localhost:8084/getProvider", String.class), this::handleFallback_block);
+        return cbFactory.create("slow_two").run(() -> rest.getForObject("http://provider/getProvider", String.class), this::handleFallback_block);
     }
 
     public String handleFallback_block(Throwable throwable) {
-        System.out.println("同步http请求");
-        return "fallback";
+        return "port:"+port;
     }
 
     public Mono<String> slow_three() {
         //LOG.warn("Error making request to book service", throwable);
-        return readingListCircuitBreaker.run(webClient.get().uri("http://localhost:8084/getProvider").retrieve().bodyToMono(String.class), this::handleFallback);
+        return readingListCircuitBreaker.run(webClient.get().uri("http://provider/getProvider").retrieve().bodyToMono(String.class), this::handleFallback);
     }
 
     public Mono<String> handleFallback(Throwable throwable) {
@@ -68,7 +66,7 @@ public class BreakService {
         } else if (throwable instanceof HttpClientErrorException) {
             return Mono.just("HTTP error occurred");
         } else {
-            return Mono.just("fallback");
+            return Mono.just("port:"+port);
         }
     }
 }

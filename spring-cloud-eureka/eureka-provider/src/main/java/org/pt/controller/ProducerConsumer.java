@@ -3,12 +3,11 @@ package org.pt.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
 /**
  * @ClassName ProducerConsumer
@@ -19,12 +18,18 @@ import java.util.Random;
 @RestController
 public class ProducerConsumer {
 
+    @Value("${server.port}")
+    private final String port;
+
     private static Logger log = LoggerFactory.getLogger(ProducerConsumer.class);
+
+    public ProducerConsumer(@Value("${server.port}")String port) {
+        this.port = port;
+    }
 
     @RequestMapping(value = "/getProvider",method = RequestMethod.GET)
     public String index(){
-        System.out.println("port:"+1111);
-        return "consumer";
+        return "port:"+port;
     }
 
     // 模拟数据

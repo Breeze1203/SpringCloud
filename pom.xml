@@ -34,6 +34,7 @@
         <module>spring-security/oauth-client</module>
         <module>spring-security/oauth-server</module>
         <module>spring-ai</module>
+        <module>common-util</module>
     </modules>
     <profiles>
         <profile>

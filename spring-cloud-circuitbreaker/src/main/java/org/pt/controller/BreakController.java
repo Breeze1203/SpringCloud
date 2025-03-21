@@ -1,5 +1,6 @@
 package org.pt.controller;
 
+import org.pt.resp.Response;
 import org.pt.service.BreakService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import reactor.core.publisher.Mono;
  * @Date 2025/2/19 09:37
  **/
 @RestController
+@RequestMapping("/break")
 public class BreakController {
     private final BreakService breakService;
 
@@ -22,16 +24,12 @@ public class BreakController {
     }
 
     @GetMapping("/getSlow")
-    public String slow(){
-        return breakService.slow();
+    public Response<String> slow(){
+        return new Response<>(200,"success",breakService.slow());
     }
 
     @GetMapping("/getSlowTwo")
-    public String slow_two(){
-        return breakService.slow_two();
-    }
-    @GetMapping("/getSlowThree")
-    public Mono<String> slow_three(){
-        return breakService.slow_three();
+    public Response<String> slow_two(){
+        return new Response<>(200,"success",breakService.slow_two());
     }
 }
