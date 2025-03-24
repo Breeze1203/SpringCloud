@@ -5,7 +5,6 @@ import org.pt.service.BreakService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Mono;
 
 /**
  * @ClassName BreakController
@@ -24,12 +23,12 @@ public class BreakController {
     }
 
     @GetMapping("/getSlow")
-    public Response<String> slow(){
-        return new Response<>(200,"success",breakService.slow());
+    public Response slow(){
+        return breakService.slow();
     }
 
     @GetMapping("/getSlowTwo")
-    public Response<String> slow_two(){
-        return new Response<>(200,"success",breakService.slow_two());
+    public Response slow_two(){
+        return breakService.slow_two();
     }
 }

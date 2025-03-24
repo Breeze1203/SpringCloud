@@ -22,15 +22,12 @@ public class CustomizeSuccessHandler implements AuthenticationSuccessHandler {
                                         Authentication authentication) throws IOException, ServletException {
         System.out.println("--------------------授权成功----------------");
         System.out.println("登录成功，用户: " + authentication.getName());
-
         // 设置响应内容类型为 JSON
         response.setContentType("application/json;charset=UTF-8");
         response.setStatus(HttpServletResponse.SC_OK);
-
         // 构造响应数据
         Map<String, Object> responseData = new HashMap<>();
         Map<String, Object> userInfo = new HashMap<>();
-
         // 添加用户信息
         userInfo.put("username", authentication.getName());
         userInfo.put("authorities", authentication.getAuthorities());
@@ -43,13 +40,11 @@ public class CustomizeSuccessHandler implements AuthenticationSuccessHandler {
         objectMapper.registerModule(new JavaTimeModule()); // 添加对 Java 8 时间类型的支持
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS); // 可选：格式化日期为 ISO 字符串
         //PrintWriter writer = resp.getWriter();
-
         try {
             // 先转换为 JSON 字符串，然后打印
             String jsonResponse = objectMapper.writeValueAsString(responseData);
             String redirectUri = "http://localhost:3000/callback?response=" + jsonResponse;
             response.sendRedirect(redirectUri);
-            //writer.print(jsonResponse);
         } catch (JsonProcessingException e) {
             System.out.println(e.getMessage());
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);

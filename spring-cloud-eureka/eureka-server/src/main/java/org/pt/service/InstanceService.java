@@ -44,7 +44,7 @@ public class InstanceService {
         // 获取所有注册的应用
         List<InstanceInfo> providerInstances = instanceRegistry.getApplications()
                 .getRegisteredApplications().stream()
-                .filter(application -> "provider".equalsIgnoreCase(application.getName())) // 筛选 provider 服务
+                .filter(application -> "provider-round".equalsIgnoreCase(application.getName())) // 筛选 provider 服务
                 .flatMap(application -> application.getInstances().stream()) // 获取所有实例
                 .collect(Collectors.toList());
 
@@ -67,13 +67,13 @@ public class InstanceService {
             return "PARTIAL";
         }
     }
-    public String stopProvider() {
+    public String stopProvider(String server) {
         List<InstanceInfo> providerInstances = instanceRegistry.getApplications().getRegisteredApplications().stream()
-                .filter(application -> "provider".equalsIgnoreCase(application.getName())) // 筛选 provider 服务
+                .filter(application -> server.equalsIgnoreCase(application.getName())) // 筛选 provider 服务
                 .flatMap(application -> application.getInstances().stream()) // 获取所有实例
                 .collect(Collectors.toList());
         if (providerInstances.isEmpty()) {
-            return "No provider instances found.";
+            return "No server instances found.";
         }
 
         boolean allStopped = true;
@@ -91,12 +91,12 @@ public class InstanceService {
             }
         }
 
-        return allStopped ? "All provider instances stopped successfully." : "Some provider instances failed to stop.";
+        return allStopped ? "All server instances stopped successfully." : "Some server instances failed to stop.";
     }
 
-    public String startProvider() {
+    public String startProvider(String server) {
         instanceRegistry.getApplications().getRegisteredApplications().stream()
-                .filter(application -> "provider".equalsIgnoreCase(application.getName()))
+                .filter(application -> server.equalsIgnoreCase(application.getName()))
                 .flatMap(application -> application.getInstances().stream())
                 .forEach(instanceInfo -> {
                     instanceRegistry.statusUpdate(
@@ -107,7 +107,7 @@ public class InstanceService {
                             false
                     );
                 });
-        return"All provider instances restart successfully.";
+        return"All server instances restart successfully.";
     }
 
     // 内部类用于封装返回的信息

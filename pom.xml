@@ -21,15 +21,16 @@
         <module>spring-cloud-openfeign</module>
         <module>spring-cloud-eureka/eureka-server</module>
         <module>spring-cloud-eureka/eureka-consummer</module>
-        <module>spring-cloud-eureka/eureka-provider</module>
+        <module>spring-cloud-eureka/eureka-provider-round-one</module>
         <module>spring-cloud-eureka/eureka-loadbalance</module>
+        <module>spring-cloud-eureka/eureka-provider-round-two</module>
         <module>spring-cloud-circuitbreaker</module>
         <module>spring-cloud-stream</module>
         <module>spring-cloud-bus/bus-service-a</module>
         <module>spring-cloud-bus/bus-service-c</module>
         <module>spring-cloud-bus/bus-service-b</module>
-        <module>spring-cloud-tracing/service-provider</module>
         <module>spring-cloud-tracing/service-consumer</module>
+        <module>spring-cloud-tracing/service-provider</module>
         <module>spring-cloud-alibaba</module>
         <module>spring-security/oauth-client</module>
         <module>spring-security/oauth-server</module>
@@ -42,26 +43,20 @@
             <modules>
                 <!-- 服务注册中心 -->
                 <module>spring-cloud-eureka/eureka-server</module>
-                <!-- 服务注册中心 -->
-                <module>spring-cloud-config/config-server</module>
-                <module>spring-cloud-config/config-client</module>
-                <module>spring-cloud-eureka/eureka-provider</module>
-                <module>spring-cloud-eureka/eureka-consummer</module>
+                <module>spring-cloud-eureka/eureka-provider-random-one</module>
+                <module>spring-cloud-eureka/eureka-provider-random-two</module>
+                <module>spring-cloud-eureka/eureka-provider-round-one</module>
+                <module>spring-cloud-eureka/eureka-provider-round-two</module>
                 <!-- 负载均衡 -->
                 <module>spring-cloud-eureka/eureka-loadbalance</module>
                 <!-- 服务网关 -->
                 <module>spring-cloud-gateway</module>
-                <!-- 远程调用 -->
-                <module>spring-cloud-openfeign</module>
                 <!-- 短路器 -->
                 <module>spring-cloud-circuitbreaker</module>
                 <!-- 消息总线 -->
                 <module>spring-cloud-bus/bus-service-a</module>
                 <module>spring-cloud-bus/bus-service-b</module>
                 <module>spring-cloud-bus/bus-service-c</module>
-                <!-- 链路追踪 -->
-                <module>spring-cloud-tracing/service-consumer</module>
-                <module>spring-cloud-tracing/service-provider</module>
                 <!-- 安全相关  oauth-->
                 <module>spring-security/oauth-server</module>
                 <module>spring-security/oauth-client</module>

@@ -12,8 +12,8 @@
     <groupId>org.pt</groupId>
     <artifactId>spring-cloud-tracing</artifactId>
     <modules>
-        <module>service-provider</module>
         <module>service-consumer</module>
+        <module>service-provider</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

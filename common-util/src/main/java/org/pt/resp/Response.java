@@ -50,4 +50,7 @@ public class Response<T> {
     public void setData(T data) {
         this.data = data;
     }
+
+    public Response() {
+    }
 }

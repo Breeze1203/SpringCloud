@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date 2025/3/21 10:55
  **/
 @RestController
-@RequestMapping("/bus-a")
+@RequestMapping("/bus-b")
 public class AppConfigController {
 
     private final AppConfig appConfig;
@@ -24,8 +24,10 @@ public class AppConfigController {
         this.appConfig = appConfig; // Spring 注入已初始化的 AppConfig
     }
 
+
     @GetMapping("/getConfig")
     public Response<AppConfig> getAppConfig() {
         return new Response<>(200, appConfig); // 返回注入的实例
     }
+
 }

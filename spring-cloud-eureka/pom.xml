@@ -15,7 +15,7 @@
     <modules>
         <module>eureka-server</module>
         <module>eureka-consummer</module>
-        <module>eureka-provider</module>
+        <module>eureka-provider-round-one</module>
         <module>eureka-loadbalance</module>
     </modules>
 

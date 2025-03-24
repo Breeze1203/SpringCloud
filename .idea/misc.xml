@@ -21,6 +21,9 @@
         <option value="$PROJECT_DIR$/spring-cloud-eureka/pom.xml" />
         <option value="$PROJECT_DIR$/spring-cloud-tracing/pom.xml" />
         <option value="$PROJECT_DIR$/spring-security/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-eureka/eureka-provider-two/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-eureka/eureka-provider-random-two/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-eureka/eureka-provider-random-one/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

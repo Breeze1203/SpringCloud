@@ -1,5 +1,6 @@
 package org.pt.service;
 
+import org.pt.resp.Response;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
 import org.springframework.cloud.client.circuitbreaker.ReactiveCircuitBreaker;
@@ -42,23 +43,25 @@ public class BreakService {
     第二个参数是一个Lambda表达式throwable -> "fallback"，
     表示当第一个Lambda表达式执行失败时（例如请求超时或服务不可用），执行的备用代码。这里直接返回字符串"fallback"作为备用结果
      */
-    public String slow() {
-        return cbFactory.create("slow").run(() -> rest.getForObject("http://provider/getProvider", String.class), throwable -> "port:"+port);
+    public Response slow() {
+        return cbFactory.create("slow").run(() -> rest.getForObject("http://provider-round/getProvider", Response.class), throwable -> new Response<>(200,"port:"+port));
     }
 
 
-    public String slow_two() {
-        return cbFactory.create("slow_two").run(() -> rest.getForObject("http://provider/getProvider", String.class), this::handleFallback_block);
+    public Response slow_two() {
+        return cbFactory.create("slow_two").run(() -> rest.getForObject("http://provider-round/getProvider", Response.class), this::handleFallback_block);
     }
 
-    public String handleFallback_block(Throwable throwable) {
-        return "port:"+port;
+    public Response handleFallback_block(Throwable throwable) {
+        return new Response<>(200,"port:"+port);
     }
 
+    /*
     public Mono<String> slow_three() {
         //LOG.warn("Error making request to book service", throwable);
         return readingListCircuitBreaker.run(webClient.get().uri("http://provider/getProvider").retrieve().bodyToMono(String.class), this::handleFallback);
     }
+     */
 
     public Mono<String> handleFallback(Throwable throwable) {
         if (throwable instanceof TimeoutException) {

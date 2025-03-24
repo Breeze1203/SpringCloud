@@ -56,6 +56,7 @@ public class SecurityConfig {
                         .loginPage("/login")
                         .permitAll()
                 )
+                .logout(logout ->logout.logoutUrl("/logout") )
                 // 调用封装的 OAuth2 登录配置方法
                 .oauth2Login(this::configureOAuth2Login);
 

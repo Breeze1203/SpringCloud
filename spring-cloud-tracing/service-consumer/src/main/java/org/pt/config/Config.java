@@ -5,11 +5,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.Duration;
+
 /**
  * @ClassName Config
  * @Author pt
  * @Description
- * @Date 2025/2/26 16:53
+ * @Date 2025/2/26 16:48
  **/
 @Configuration
 public class Config {

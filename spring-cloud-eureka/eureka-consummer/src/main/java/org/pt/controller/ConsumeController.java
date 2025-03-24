@@ -19,7 +19,6 @@ public class ConsumeController {
 
     @RequestMapping(value = "/getProvider",method = RequestMethod.GET)
     public String index(){
-        System.out.println("port:"+2222);
         return "consumer";
     }
 

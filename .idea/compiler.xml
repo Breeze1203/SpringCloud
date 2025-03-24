@@ -9,6 +9,7 @@
         <module name="spring-cloud-openfeign" />
         <module name="config-client" />
         <module name="oauth-client" />
+        <module name="eureka-provider-round-two" />
         <module name="eureka-server" />
         <module name="open-feign" />
         <module name="nacos" />
@@ -17,16 +18,18 @@
         <module name="spring-cloud-circuitbreaker" />
         <module name="bus-service-c" />
         <module name="bus-service-b" />
+        <module name="eureka-provider-round-one" />
         <module name="bus-service-a" />
         <module name="spring-cloud-gateway" />
         <module name="spring-ai" />
+        <module name="eureka-provider-random-one" />
         <module name="eureka-consummer" />
         <module name="sentinel" />
         <module name="common-util" />
         <module name="eureka-loadbalance" />
         <module name="spring-cloud-stream" />
+        <module name="eureka-provider-random-two" />
         <module name="config-server" />
-        <module name="eureka-provider" />
         <module name="service-consumer" />
         <module name="service-provider" />
         <module name="config" />
@@ -39,6 +42,10 @@
       <module name="eureka-loadbalanced" target="17" />
       <module name="eureka-provider (1)" target="17" />
       <module name="eureka-provider (2)" target="17" />
+      <module name="eureka-provider-one (1)" target="17" />
+      <module name="eureka-provider-one (2)" target="17" />
+      <module name="eureka-provider-round-one (1)" target="17" />
+      <module name="eureka-provider-round-one (2)" target="17" />
       <module name="oauth-client-a" target="17" />
       <module name="oauthe-server (1)" target="17" />
       <module name="oauthe-server (2)" target="17" />
@@ -67,9 +74,15 @@
       <module name="eureka-consummer (2)" options="-parameters" />
       <module name="eureka-loadbalance" options="-parameters" />
       <module name="eureka-loadbalanced" options="-parameters" />
-      <module name="eureka-provider" options="-parameters" />
       <module name="eureka-provider (1)" options="-parameters" />
       <module name="eureka-provider (2)" options="-parameters" />
+      <module name="eureka-provider-one (1)" options="-parameters" />
+      <module name="eureka-provider-one (2)" options="-parameters" />
+      <module name="eureka-provider-random-one" options="-parameters" />
+      <module name="eureka-provider-random-two" options="-parameters" />
+      <module name="eureka-provider-round-one" options="-parameters" />
+      <module name="eureka-provider-round-one (2)" options="-parameters" />
+      <module name="eureka-provider-round-two" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="loadbalancer" options="-parameters" />
       <module name="nacos" options="-parameters" />
