@@ -51,6 +51,7 @@
                 <module>spring-cloud-eureka/eureka-loadbalance</module>
                 <!-- 服务网关 -->
                 <module>spring-cloud-gateway</module>
+                <module>common-util</module>
                 <!-- 短路器 -->
                 <module>spring-cloud-circuitbreaker</module>
                 <!-- 消息总线 -->
