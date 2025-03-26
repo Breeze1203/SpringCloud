@@ -11,7 +11,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,7 +44,9 @@ public class CustomizeSuccessHandler implements AuthenticationSuccessHandler {
         try {
             // 先转换为 JSON 字符串，然后打印
             String jsonResponse = objectMapper.writeValueAsString(responseData);
-            String redirectUri = "http://localhost:3000/callback?response=" + jsonResponse;
+            String encodedJson = URLEncoder.encode(jsonResponse, StandardCharsets.UTF_8.toString());
+            String redirectUri = "https://loaclhost/echo-admin/callback?response=" + encodedJson;
+            System.out.println("Redirecting to: " + redirectUri);
             response.sendRedirect(redirectUri);
         } catch (JsonProcessingException e) {
             System.out.println(e.getMessage());
@@ -53,12 +56,9 @@ public class CustomizeSuccessHandler implements AuthenticationSuccessHandler {
             errorResponse.put("message", "服务器内部错误");
             errorResponse.put("timestamp", System.currentTimeMillis());
             String errorJson = objectMapper.writeValueAsString(errorResponse);
-            String redirectUri = "http://localhost:3000/callback?response=" + errorJson;
+            String redirectUri = "http://loaclhost:3000/callback?response=" + errorJson;
             response.sendRedirect(redirectUri);
             //writer.print(errorJson);
-        } finally {
-            //writer.flush();
-            //writer.close();
         }
     }
 }

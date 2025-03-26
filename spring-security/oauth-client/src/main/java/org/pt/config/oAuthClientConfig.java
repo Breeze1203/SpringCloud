@@ -170,15 +170,15 @@ public class oAuthClientConfig {
                 // 指定OAuth2授权类型，这里是授权码模式，Client先获取code再换取token，最安全常见的模式
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 // 重定向URI，Server授权后将用户重定向到此地址并附上授权码，必须与Server端注册的redirect-uris一致
-                .redirectUri("http://localhost:5555/login/oauth2/code/echo")
+                .redirectUri("http://loaclhost:5555/login/oauth2/code/echo")
                 // 请求的权限范围，定义Client需要的权限，Server需支持这些scope，用户授权时会看到这些范围
                 .scope("read", "write","profile", OidcScopes.OPENID)
                 // 授权服务器的授权端点URL，Client将用户重定向到此地址开始OAuth2流程，用户在此登录并授权
-                .authorizationUri("http://localhost:9000/oauth2/authorize")
+                .authorizationUri("http://loaclhost:9000/oauth2/authorize")
                 // 授权服务器的令牌端点URL，Client用授权码向此地址请求访问令牌，通常是POST请求
-                .tokenUri("http://localhost:9000/oauth2/token")
-                .jwkSetUri("http://localhost:9000/oauth2/jwks")
-                .userInfoUri("http://localhost:9000/userinfo") // 添加 UserInfo URI
+                .tokenUri("http://loaclhost:9000/oauth2/token")
+                .jwkSetUri("http://loaclhost:9000/oauth2/jwks")
+                .userInfoUri("http://loaclhost:9000/userinfo") // 添加 UserInfo URI
                 .userNameAttributeName("sub")
                 // 完成ClientRegistration对象的构建，将所有参数组合成完整的客户端注册配置
                 .build();

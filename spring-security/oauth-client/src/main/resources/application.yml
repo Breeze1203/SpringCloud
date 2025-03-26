@@ -8,6 +8,7 @@ spring:
     redis:
       host: localhost
       port: 6379
-      password: pt200103  # 添加 Redis 密码
+      password:   # 添加 Redis 密码
+      username: default
   session:
     store-type: redis

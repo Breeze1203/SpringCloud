@@ -4,13 +4,14 @@ spring:
     oauth2:
       authorizationserver:
         issuer: http://localhost:9000  # 授权服务器的issuer标识
-  data:
-    redis:
-      host: localhost
-      port: 6379
-      password: pt200103  # 添加 Redis 密码
-    session:
-      store-type: redis
+#  data:
+#    redis:
+#      host: 43.139.228.147
+#      port: 6379
+#      password:   # 添加 Redis 密码
+#      username: default
+#    session:
+#      store-type: redis
 server:
   port: 9000  # Server运行在9000端口
 logging:

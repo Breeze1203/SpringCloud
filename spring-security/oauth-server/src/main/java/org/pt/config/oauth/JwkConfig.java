@@ -32,7 +32,7 @@ public class JwkConfig {
 
     @Bean
     public JwtDecoder jwtDecoder(JWKSource<SecurityContext> jwkSource) {
-        return NimbusJwtDecoder.withJwkSetUri("http://localhost:9000/oauth2/jwks").build();
+        return NimbusJwtDecoder.withJwkSetUri("http://loaclhost:9000/oauth2/jwks").build();
     }
 
     private KeyPair generateRsaKey() {
